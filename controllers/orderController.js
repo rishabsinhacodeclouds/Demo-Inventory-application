@@ -22,7 +22,7 @@ const placeOrder = async (req, res) => {
     const selectedVariant = product.variants.find((v) => v.name === variant);
 
     if (!selectedVariant || selectedVariant.quantity < quantity) {
-      return res.status(400).json({ message: 'Insufficient stock' });
+      return res.status(200).json({ message: 'Insufficient stock' });
     }
 
     // Calculate totalprice
